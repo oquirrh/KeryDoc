@@ -69,7 +69,7 @@ export default function Home() {
               <span className="text-stroke text-transparent">Again</span>
             </h1>
             <p className="mt-6 text-2xl text-[#C14600] font-medium">
-              Empower your IDE's AI agent with always-updated documentation – scrape, structure, and sync the latest
+              Empower your IDE&apos;s AI agent with always-updated documentation – scrape, structure, and sync the latest
               APIs, frameworks, and libraries in seconds.
             </p>
             <div className="mt-10">
