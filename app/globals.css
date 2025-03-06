@@ -2,26 +2,141 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 47 82% 94%;
+    --foreground: 27 100% 38%;
+
+    --card: 47 82% 94%;
+    --card-foreground: 27 100% 38%;
+
+    --popover: 47 82% 94%;
+    --popover-foreground: 27 100% 38%;
+
+    --primary: 20 100% 38%;
+    --primary-foreground: 47 82% 94%;
+
+    --secondary: 35 100% 57%;
+    --secondary-foreground: 20 100% 38%;
+
+    --muted: 40 50% 79%;
+    --muted-foreground: 20 100% 38%;
+
+    --accent: 35 100% 57%;
+    --accent-foreground: 20 100% 38%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 47 82% 94%;
+
+    --border: 20 100% 38%;
+    --input: 40 50% 79%;
+    --ring: 20 100% 38%;
+
+    --radius: 0rem;
+  }
+
+  .dark {
+    --background: 20 100% 38%;
+    --foreground: 47 82% 94%;
+
+    --card: 20 100% 38%;
+    --card-foreground: 47 82% 94%;
+
+    --popover: 20 100% 38%;
+    --popover-foreground: 47 82% 94%;
+
+    --primary: 35 100% 57%;
+    --primary-foreground: 20 100% 38%;
+
+    --secondary: 40 50% 79%;
+    --secondary-foreground: 20 100% 38%;
+
+    --muted: 40 50% 79%;
+    --muted-foreground: 20 100% 38%;
+
+    --accent: 40 50% 79%;
+    --accent-foreground: 20 100% 38%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 47 82% 94%;
+
+    --border: 35 100% 57%;
+    --input: 40 50% 79%;
+    --ring: 35 100% 57%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-darker-grotesque);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-funnel-display);
+    font-weight: 700;
+  }
+  blockquote {
+    font-family: var(--font-playfair);
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-stroke {
+    -webkit-text-stroke: 1px #c14600;
+    text-stroke: 1px #c14600;
+  }
+
+  .text-stroke-2 {
+    -webkit-text-stroke: 2px #c14600;
+    text-stroke: 2px #c14600;
+  }
+
+  .text-stroke-white {
+    -webkit-text-stroke: 1px #fef9e1;
+    text-stroke: 1px #fef9e1;
+  }
+
+  .text-stroke-white-2 {
+    -webkit-text-stroke: 2px #fef9e1;
+    text-stroke: 2px #fef9e1;
+  }
+
+  .neo-retro-shadow {
+    box-shadow: 4px 4px 0 #fef9e1;
   }
 }
+
+@keyframes tickertape {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.tickertape {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tickertape-content {
+  display: flex;
+  animation: tickertape 60s linear infinite;
+  white-space: nowrap;
+}
+
+.tickertape-item {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
